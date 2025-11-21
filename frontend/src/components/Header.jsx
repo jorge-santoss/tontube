@@ -15,7 +15,7 @@ export default function Header() {
     <header className="sticky top-0 z-20 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black">
       <div className="flex h-5 items-center">
         <div
-          className="flex md:hidden md:mr-6 mr-4 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#8888]/[0.6]"
+          className="flex md:hidden md:mr-6 mr-4 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#8888]/0.6"
           onClick={() => {}}
         >
           {true ? (
@@ -32,7 +32,7 @@ export default function Header() {
 
       <div className="flex items-center">
         <div className="hidden md:flex">
-          <div className="flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
+          <div className="flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/0.6">
             <RiVideoAddLine className="text-black dark:text-white text-xl cursor-pointer" />
           </div>
         </div>

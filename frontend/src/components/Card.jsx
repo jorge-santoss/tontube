@@ -6,16 +6,25 @@ import avatar from "../assets/avatar.png";
 import thumbnail from "../assets/thumbnail.png";
 
 import VideoLength from "./VideoLength.jsx";
-
 import moment from "moment";
 
+// Get backend URL from env
+// This will fetch the thumbnail from the backend instead of the (wrong) local path
+const backendUrl = import.meta.env.VITE_BACKENDURL || "http://localhost:3000";
+
 function Card({ video }) {
+  // Build the correct thumbnail URL
+  // now display your thumbnail correctly 
+  const thumbUrl = video?.thumbnail
+    ? `${backendUrl}/uploads/${video.thumbnail}`
+    : thumbnail;
+
   return (
     <Link to={`/${video?.url}`}>
       <div className="flex flex-col mb-8">
         <div className="relative h-48 md:h-52 rounded-2xl overflow-hidden">
           <img
-            src={video?.thumbnail ? video?.thumbnail : thumbnail}
+            src={thumbUrl}
             alt="thumbnails"
             className="h-full w-full object-cover"
           />
